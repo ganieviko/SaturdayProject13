@@ -15,5 +15,6 @@ public class Part2 {
         7) Print the String str
 
         8) Print the URL`
+        some changing
      */
 }
