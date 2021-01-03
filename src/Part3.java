@@ -25,15 +25,17 @@ public class Part3 {
         driver.navigate().back();
         //driver.navigate().forward();
 
-        WebElement checkIfDisplayedTeddy = driver.findElement(By.name("keyword"));
-        checkIfDisplayedTeddy.click();
-        String text = checkIfDisplayedTeddy.getText();
+        driver.findElement(By.name("keyword")).click();
+        String  checkIfDisplayedTeddy = driver.findElement(By.cssSelector("li.recentCont")).getText();
+        //checkIfDisplayedTeddy.click();
+        //String text = checkIfDisplayedTeddy.getText();
+        System.out.println(checkIfDisplayedTeddy);
 
-        if (text.equals("teddy bear")){
-            System.out.println("Search bar has text 'teddy bear' ");
-        }else {
-            System.out.println("Search bar doesn't have 'teddy bear' text");
-        }
+//        if (text.equals("Teddy Bear")){
+//            System.out.println("Search bar has text 'teddy bear' ");
+//        }else {
+//            System.out.println("Search bar doesn't have 'teddy bear' text");
+//        }
         System.out.println("------------------------------------------------");
     }
 }
