@@ -1,8 +1,5 @@
-.txt
-MyConstants
-*DemoPart1
 .idea
+target
 out
-SaturdayProject13Selenium.iml
-*debug.log
-debug.log
+*.iml
+/debug.log
