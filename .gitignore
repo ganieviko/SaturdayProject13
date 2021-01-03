@@ -4,4 +4,5 @@ MyConstants
 .idea
 out
 SaturdayProject13Selenium.iml
+*debug.log
 debug.log

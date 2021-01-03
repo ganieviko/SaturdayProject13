@@ -13,41 +13,36 @@ public class Part1 {
        // driver.findElement(By.id("")).click();
 
         String testCaseName = "Automation";
+        String testCaseEmail = "Testing@gmail.com";
+        String testCaseCurrentAddress = "Testing Current Address";
+        String testCasePermanentAddress = "Testing Permanent Address";
+
+
         WebElement fullName = driver.findElement(By.id("userName"));
         fullName.sendKeys(testCaseName);
-        System.out.println("Full Name is " + testCaseName);
-       // driver.quit();
 
-        String testCaseEmail = "Testing@gmail.com";
         WebElement userEmail = driver.findElement(By.id("userEmail"));
         userEmail.sendKeys(testCaseEmail);
-        System.out.println("Email is " + testCaseEmail);
 
-        String testCaseCurrentAddress = "Testing Current Address";
         WebElement currentAddress = driver.findElement(By.id("currentAddress"));
         currentAddress.sendKeys(testCaseCurrentAddress);
-        System.out.println("Current address is " + testCaseCurrentAddress);
 
-        String testCasePermanentAddress = "Testing Permanent Address";
         WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
         permanentAddress.sendKeys(testCasePermanentAddress);
-        System.out.println("Permanent addres is " + testCaseCurrentAddress);
-       // System.out.println("get text is " + permanentAddress.getText());
-       // String displayed = driver.findElement(By.id("currentAddress")).getText();
-       // System.out.println("get text is " + displayed);
+
         driver.findElement(By.id("submit")).click();
 
         String nameDisplayed = driver.findElement(By.id("name")).getText();
-        System.out.println("name is " + nameDisplayed);
+        System.out.println(nameDisplayed);
 
         String emailDisplayed = driver.findElement(By.id("email")).getText();
-        System.out.println("email is " + emailDisplayed);
+        System.out.println(emailDisplayed);
 
         String currentAddressDisplayed = driver.findElement(By.cssSelector("#output p:nth-child(3)")).getText();
-        System.out.println("current address is " + currentAddressDisplayed);
+        System.out.println(currentAddressDisplayed);
 
         String permanentAddressDisplayed = driver.findElement(By.cssSelector("#output p:nth-child(4)")).getText();
-        System.out.println("permanent address is " + permanentAddressDisplayed);
+        System.out.println(permanentAddressDisplayed);
 
 
     }
