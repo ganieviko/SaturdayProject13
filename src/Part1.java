@@ -35,7 +35,6 @@ public class Part1 {
        // System.out.println("get text is " + permanentAddress.getText());
        // String displayed = driver.findElement(By.id("currentAddress")).getText();
        // System.out.println("get text is " + displayed);
-        // TODO find out how to get text from website and print it
         driver.findElement(By.id("submit")).click();
 
         String nameDisplayed = driver.findElement(By.id("name")).getText();

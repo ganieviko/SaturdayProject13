@@ -1,5 +1,5 @@
-*.txt
-*MyConstants
+.txt
+MyConstants
 *DemoPart1
 .idea
 out

@@ -9,43 +9,51 @@ public class DemoPart1 {
     public static void main(String[] args) {
         System.setProperty("webdriver.chrome.driver", MyConstants.DRIVER_PATH);
         WebDriver driver = new ChromeDriver();
-        driver.get( "https://www.seleniumeasy.com/test/basic-first-form-demo.html" );
+        driver.get( "http://demoqa.com/text-box" );
+        driver.manage().window().maximize();
+        // driver.findElement(By.id("")).click();
 
-        driver.findElement(By.id("at-cv-lightbox-close")).click();
+        String testCaseName = "Automation";
+        WebElement fullName = driver.findElement(By.id("userName"));
+        fullName.sendKeys(testCaseName);
+        System.out.println("Full Name is " + testCaseName);
+        // driver.quit();
 
-        String enterA = "100";
-        WebElement firstElement = driver.findElement(By.id("sum1"));
-        firstElement.sendKeys(enterA);
-//        String firstElementText = driver.findElement(By.id("sum1")).getText();
-        System.out.println("input a as a String " + enterA);
-//        System.out.println("This is an value of A from WebElement " + firstElement.getText());
-//        System.out.println("-------------------------------");
-        String enterB = "250";
-        WebElement secondElement = driver.findElement(By.id("sum2"));
-        secondElement.sendKeys(enterB);
-        System.out.println("input b as a String is " + enterB);
-        System.out.println("-----------------------------------------------");
+        String testCaseEmail = "Testing@gmail.com";
+        WebElement userEmail = driver.findElement(By.id("userEmail"));
+        userEmail.sendKeys(testCaseEmail);
+        System.out.println("Email is " + testCaseEmail);
 
-        int convertA = parseInt(enterA);
-        System.out.println("input a converted to an integer " + convertA);
-        int convertB = parseInt(enterB);
-        System.out.println("input b converted to an integer " + convertB);
-        //int convertSummary = parseInt(display);
+        String testCaseCurrentAddress = "Testing Current Address";
+        WebElement currentAddress = driver.findElement(By.id("currentAddress"));
+        currentAddress.sendKeys(testCaseCurrentAddress);
+        System.out.println("Current address is " + testCaseCurrentAddress);
 
-        System.out.println("-----------------------------------------------");
-        driver.findElement(By.cssSelector("#gettotal>button")).click();
-        String display = driver.findElement(By.id("displayvalue")).getText();
-        System.out.println("Value 'a + b' from WebElement as a String " + display);
-        int convertedDisplay = parseInt(display);
-        System.out.println("This is converted String to int " + convertedDisplay);
-        int sumOfAAndB = convertA+convertB;
-        System.out.println("sumOfAAndB is " + sumOfAAndB);
+        String testCasePermanentAddress = "Testing Permanent Address";
+        WebElement permanentAddress = driver.findElement(By.id("permanentAddress"));
+        permanentAddress.sendKeys(testCasePermanentAddress);
+        System.out.println("Permanent addres is " + testCaseCurrentAddress);
+        // System.out.println("get text is " + permanentAddress.getText());
+        // String displayed = driver.findElement(By.id("currentAddress")).getText();
+        // System.out.println("get text is " + displayed);
+        // TODO find out how to get text from website and print it
+        driver.findElement(By.id("submit")).click();
 
-        System.out.println("-----------------------------------------------");
-        if (convertedDisplay == sumOfAAndB){
-            System.out.println("Success");
-        }else {
-            System.out.println("Failure");
-        }
+        String nameDisplayed = driver.findElement(By.id("name")).getText();
+        System.out.println("name is " + nameDisplayed);
+
+        String emailDisplayed = driver.findElement(By.id("email")).getText();
+        System.out.println("email is " + emailDisplayed);
+
+//        String currentAddressDisplayed = driver.findElement(By.cssSelector("#output p:nth-child(3)")).getText();
+//        System.out.println("current address is " + currentAddressDisplayed);
+
+        String permanentAddressDisplayed = driver.findElement(By.cssSelector("#output p:nth-child(4)")).getText();
+        System.out.println("permanent address is " + permanentAddressDisplayed);
+
+        String addressDisplayed = driver.findElement(By.name("Automation")).getText();
+        System.out.println("my version " + addressDisplayed);
+
+
     }
 }

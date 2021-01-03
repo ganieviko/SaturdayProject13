@@ -1,20 +1,31 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
 public class Part2 {
-    /*
-        1) Navigate to https://demo.applitools.com/
+    public static void main(String[] args) {
 
-        2) Maximize the window
+        System.setProperty("webdriver.chrome.driver", MyConstants.DRIVER_PATH);
+        WebDriver driver = new ChromeDriver();
+        driver.get( "https://demo.applitools.com/" );
+        driver.manage().window().maximize();
 
-        3) Enter the username as "ttechno@gmail.com"
+        String testUserName = "ttechno@gmail.com";
+        driver.findElement(By.id("username")).sendKeys(testUserName);
 
-        4) Enter the password as "techno123."
+        String testPassword = "techno123.";
+        driver.findElement(By.id("password")).sendKeys(testPassword);
 
-        5) Click on sign in button
+        driver.findElement(By.id("log-in")).click();
 
-        6) Get the header text in red color ( starts with "Your nearest branch ...") and assign it to a String str
+        String headerTextTime = driver.findElement(By.id("time")).getText();
+        System.out.println("Header text is " + headerTextTime);
+        System.out.println("---------------------------------");
 
-        7) Print the String str
+        String currentUrl = driver.getCurrentUrl();
+        System.out.println("currentUrl is " + currentUrl);
 
-        8) Print the URL`
-        some changing
-     */
+
+    }
 }
