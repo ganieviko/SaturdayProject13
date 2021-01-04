@@ -19,23 +19,21 @@ public class Part3 {
         String searchMessageContainer = driver.findElement(By.id("searchMessageContainer")).getText();
         System.out.println(searchMessageContainer);
         System.out.println("------------------------------------------------");
+
         String teddyBearCurrentUrl = driver.getCurrentUrl();
         System.out.println(teddyBearCurrentUrl);
         System.out.println("------------------------------------------------");
+
+        driver.findElement(By.className("notIeLogoHeader")).click();
+        System.out.println(driver.getCurrentUrl());
+
         driver.navigate().back();
-        //driver.navigate().forward();
 
-        driver.findElement(By.name("keyword")).click();
-        String  checkIfDisplayedTeddy = driver.findElement(By.cssSelector("li.recentCont")).getText();
-        //checkIfDisplayedTeddy.click();
-        //String text = checkIfDisplayedTeddy.getText();
-        System.out.println(checkIfDisplayedTeddy);
 
-//        if (text.equals("Teddy Bear")){
-//            System.out.println("Search bar has text 'teddy bear' ");
-//        }else {
-//            System.out.println("Search bar doesn't have 'teddy bear' text");
-//        }
+        WebElement value = driver.findElement(By.cssSelector("#inputValEnter"));
+        String teddyBearValue = value.getAttribute("value");
+        System.out.println(teddyBearValue);
+
         System.out.println("------------------------------------------------");
     }
 }
